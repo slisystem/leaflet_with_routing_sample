@@ -17,16 +17,17 @@ class RoutingMachine extends MapLayer {
           weight: 6 
         }]
       },
-      addWaypoints: false,
-      draggableWaypoints: false,
-      fitSelectedRoutes: false,
-      showAlternatives: false,
-      altLineOptions: { styles: [{opacity: 0}] },
-      createMarker: () => { return null; }
+      addWaypoints: true,
+      draggableWaypoints: true,
+      routeWhileDragging: false,
+      fitSelectedRoutes: true,
+      showAlternatives: true,
+      altLineOptions: { styles: [{opacity: 1}] },
+      //createMarker: () => { return null; }
     })
     .addTo(map.current.leafletElement);
 
-    leafletElement.hide(); // hide road describtion
+    //leafletElement.hide(); // hide road describtion
 
     return leafletElement.getPlan();
   }
