@@ -2,16 +2,11 @@ import { MapLayer } from 'react-leaflet';
 import L from 'leaflet';
 import { withLeaflet } from 'react-leaflet';
 import 'leaflet-routing-machine/src';
-import '../node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 class RoutingMachine extends MapLayer {
   createLeafletElement() {
-    const { color, map } = this.props;
-
-    const road = [
-      L.latLng(57.74, 11.94),
-      L.latLng(57.6792, 11.949)
-    ]
+    const { color, map, road } = this.props;
 
     let leafletElement = L.Routing.control({
       waypoints: road,
